@@ -1,0 +1,105 @@
+/*
+ ============================================================================
+ Name        : Geo.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+	int i;
+	fflush(stdout);
+	scanf("%d", &i);
+
+	if(i == 1)
+	{
+		float pi = 3.14159;
+		float r;
+
+		printf("What is the radius of the circle? ");
+		scanf("%f", &r);
+
+			if(r > 0)
+			{
+				float squaredRadius = r * r;
+				float area = pi * squaredRadius;
+
+				printf("\nCircle's area: %f ", area);
+
+				return 1;
+			}
+
+			printf("\nNegative input is not allowed!");
+			return 0;
+
+	}
+	if(i == 2)
+	{
+		float l;
+		float w;
+
+		printf("What is the length of the rectangle? ");
+		scanf("%f", &l);
+			if(l < 0)
+			{
+				printf("\nNegative input is not allowed!");
+				return 0;
+			}
+		printf("\nWhat is the width of the rectangle? ");
+		scanf("%f" , &w);
+			if(w < 0)
+			{
+				printf("\nNegative input is not allowed!");
+				return 0;
+			}
+
+		float area = l * w;
+
+		printf("\nRectangle's Area: %f ", area);
+
+		return 1;
+	}
+	if(i == 3)
+	{
+		float b;
+		float h;
+
+		printf("What is the base of the triangle? ");
+		scanf("%f", &b);
+			if(b < 0)
+			{
+					printf("\nNegative input is not allowed!");
+					return 0;
+			}
+
+		printf("\nWhat is the height of the triangle? ");
+		scanf("%f", &h);
+
+			if(h < 0)
+			{
+					printf("\nNegative input is not allowed!");
+					return 0;
+			}
+		float area = b * h * .5;
+
+		printf("\nTrinagle's Area: %f ", area);
+
+		return 1;
+	}
+	if(i == 4)
+	{
+		return 1;
+	}
+	else
+	{
+		printf("Not An option choose 1-4 please!");
+		return 0;
+	}
+
+}
