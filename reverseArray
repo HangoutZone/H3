@@ -1,0 +1,40 @@
+/*
+ ============================================================================
+ Name        : reverse.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int * swapArray(int array[], int n)
+{
+	int * pArray;
+	int temp;
+
+	for(int i = 0; i < n/2; i++)
+	{
+		temp = array[i];
+		array[i] = array[n - 1 - i];
+		array[n - 1 - i] = temp;
+
+	}
+
+	*pArray = temp;
+
+	return *pArray;
+}
+
+int main() {
+
+	int aRay[] = {1, 2, 5, 76, 7, 10, 25};
+
+	swapArray(aRay , 7);
+
+	return 0;
+}
+
