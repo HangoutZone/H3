@@ -1,0 +1,72 @@
+/*
+ ============================================================================
+ Name        : population.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	int startPop;
+	float bRate;
+	float dRate;
+	int years;
+
+	fflush(stdout);
+
+	printf("What is the starting population? ");
+	scanf("%d", &startPop);
+	if(startPop < 2)
+	{
+		printf("\n");
+		return 0;
+	}
+
+	printf("\nWhat is the annual birth rate? ");
+	scanf("%f", &bRate);
+
+	if(bRate < 0)
+	{
+		printf("\nNegative input is not allowed!");
+		return 0;
+	}
+
+	printf("\nWhat is the annual death rate? ");
+	scanf("%f", &dRate);
+
+	if(dRate < 0)
+	{
+		printf("\nNegative input is not allowed!");
+		return 0;
+	}
+
+	printf("\nWhat are the number of years?");
+	scanf("%d", &years);
+
+	if(years < 1)
+	{
+		printf("\ninput is not allowed! Needs to be greater then 0 years.");
+		return 0;
+	}
+
+	float bPerc = bRate * 0.01;
+	float dPerc = dRate * 0.01;
+	float outcome = startPop + bPerc - dPerc;
+	int newPop;
+
+	for(int i = 0; i < years; i++)
+	{
+		newPop = startPop + outcome;
+	}
+
+	for(int i = 0; i < years; i++)
+	{
+		printf("\n Size of population for year: %d %d", i,  newPop);
+	}
+	return 1;
+}
